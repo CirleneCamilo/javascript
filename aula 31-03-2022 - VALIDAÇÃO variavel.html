@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> VALIDAÇÃO </title>
+
+        <script>
+        
+            function verificar()
+             {
+                 var n, i, e ;
+                 n = document.form1.txtnome.value ;
+                 if( n.length == 0) 
+                 {
+                     alert ("Preencha corretamente o campo nome");
+                     document.form1.txtnome.style.background="yellow";
+                     document.form1.txtnome.focus();
+                     document.form1.txtidade.value = "";
+                     return false;
+                 }
+
+                 i = document.form1.txtidade.value ;
+                 if(isNaN(i) || i.lenght == 0 )
+
+                {    alert ("Preencha corretamente o campo idade");
+                     document.form1.txtnome.style.background="yellow";
+                     document.form1.txtnome.focus();
+                     document.form1.txtidade.value = "";
+                     return false;
+                }
+                
+                e = document.form1.txtemail.value ;
+                if(e.indexOf("@") < 0 || e.lenght == 0 )
+
+                {
+                    alert ("Preencha corretamente o campo email");
+                     document.form1.txtnome.style.background="yellow";
+                     document.form1.txtnome.focus();
+                     return false;
+                }
+
+                 document.form1.submit();
+
+                        
+             }
+
+
+        </script>
+
+
+</head>
+<body>
+        <form name="form1" method= "post" action="grava.jsp">
+
+        Nome:
+        <input type="text" name="txtnome"> <br>
+        
+        Idade:
+        <input type="text" name="txtidade"> <br>
+
+        Email:
+        <input type="text" name="txtemail"> <br>
+        
+        
+        <input type="button" value="Gravar" onclick="verificar()">
+
+        
+
+
+    </form>
+    
+    </body>
+
+
+</html>
